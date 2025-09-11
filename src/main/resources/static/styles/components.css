@@ -1,0 +1,147 @@
+/* ================================
+   components.css – UI Modules
+   Hero, Navbar, Tabs, Cards, etc.
+   ================================ */
+
+/* === Hero Section === */
+.hero {
+  padding: 4rem 1.5rem;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--color-coral);
+}
+
+.hero p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: #cbd5e1;
+}
+
+/* === Navbar === */
+.navbar-custom {
+  background-color: var(--color-navy);
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-custom .nav-link {
+  color: #f1f5f9;
+  font-weight: 500;
+  margin: 0 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+  color: var(--color-coral);
+}
+
+.navbar-custom .nav-link.active {
+  color: var(--color-coral);
+  font-weight: 700;
+}
+
+.navbar-custom .navbar-toggler {
+  border: none;
+  color: #fff;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* === Module Cards === */
+.module-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+}
+
+.module-card h5 {
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+/* === Tabs === */
+.tab-btn {
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  background-color: #e2e8f0;
+  color: var(--color-navy);
+  border: none;
+  margin: 0 0.5rem;
+}
+
+.tab-btn.active {
+  background-color: var(--color-coral);
+  color: white;
+}
+
+/* === Profile Cards === */
+.profile-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+}
+
+body.dark-mode .profile-card {
+  background-color: #1e293b;
+  color: var(--color-white);
+}
+
+/* === Video Preview === */
+.preview-box {
+  background-color: var(--color-navy);
+  color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.preview-box p {
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+.video-crop-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* This is the key part that hides anything outside this box */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-crop-wrapper .translator-video {
+  /* Make the video wider than its container */
+  width: 125%;
+  /* The max-width from before is no longer needed here if you use this method */
+  max-width: 125%;
+  position: absolute;
+}
+
+#toast-container {
+  position: fixed; /* Keeps it in the same place even when scrolling */
+  top: 1rem; /* 1rem spacing from the top */
+  right: 1rem; /* 1rem spacing from the right */
+  z-index: 9999; /* A very high number to ensure it's on top */
+  min-width: 300px; /* Ensures toasts have a reasonable width */
+}

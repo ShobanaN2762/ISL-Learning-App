@@ -1,0 +1,213 @@
+/* === Bootstrap override custom theme === */
+:root {
+  --color-navy-900: #0a192f;
+  --color-navy-800: #172a45;
+  --color-navy-700: #304a6d;
+  --color-coral: #ff7f50;
+  --color-coral-600: #f27042;
+  --color-light-slate: #ccd6f6;
+  --color-slate-gray: #8892b0;
+  --color-white: #ffffff;
+  --transition-speed: 0.3s;
+  --color-slate-700: #334155;
+}
+
+/* === Form Input Styling === */
+.form-control {
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color var(--transition-speed) ease;
+  background-color: #fff;
+  color: var(--color-slate-700);
+}
+
+.form-control:focus {
+  border-color: var(--color-coral);
+  box-shadow: 0 0 0 0.2rem rgba(251, 124, 71, 0.25);
+}
+
+/* === Buttons === */
+.btn-coral {
+  background-color: var(--color-coral);
+  color: white;
+  border: none;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.btn-coral:hover {
+  background-color: #e96833;
+  color: white;
+}
+
+/* === Hero Section === */
+.text-coral {
+  color: var(--color-coral) !important;
+}
+
+#welcome-section {
+  background-color: var(--color-navy-900);
+  color: white;
+}
+#welcome-section .container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+#welcome-section h1,
+#welcome-section h2 {
+  font-weight: 700;
+}
+
+#welcome-section .lead {
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Card Hover Animation === */
+.hover-animate {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+}
+
+.card.hover-animate:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .card.hover-animate {
+  background-color: var(--color-navy-800);
+  color: var(--color-light-slate);
+}
+
+body.dark-mode .card.hover-animate:hover {
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+}
+
+/* === Auth Modal === */
+#auth-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#auth-modal-content {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  max-width: 450px;
+  width: 100%;
+  transform: scale(1);
+  transition: opacity var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
+}
+
+body.dark-mode #auth-modal-content {
+  background-color: var(--color-navy-800);
+  color: var(--color-white);
+}
+
+/* === Modal Close Button === */
+#auth-modal-close {
+  font-size: 1.25rem;
+  color: #64748b;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#auth-modal-close:hover {
+  color: var(--color-coral);
+}
+
+/* === Modal Animation States === */
+#auth-modal-content.opacity-0 {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+#auth-modal-content.scale-95 {
+  transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Section Transitions === */
+.section {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.section.active {
+  display: block;
+}
+
+.section.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* === Smooth Scroll === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Nav Links === */
+.nav-link.text-coral-500 {
+  color: var(--color-coral) !important;
+}
+
+.nav-link.text-light-slate {
+  color: var(--color-light-slate) !important;
+}
+
+.nav-link.fw-semibold {
+  font-weight: 600;
+}
+
+/* === Hero Button (Landing CTA) === */
+#get-started-btn {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+.text-navy {
+  color: #172a45 !important;
+}
+
+.bg-light-surface {
+  background-color: #f8f9fc;
+}
+
+.card-custom {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+/* Button */
+.btn-coral {
+  background-color: #ff7f50;
+  color: #fff;
+  border-color: #ff7f50;
+}
+
+.btn-coral:hover,
+.btn-coral:focus {
+  background-color: #f27042;
+  border-color: #f27042;
+  color: #fff;
+}

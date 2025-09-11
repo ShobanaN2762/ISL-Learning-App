@@ -1,0 +1,79 @@
+/* ================================
+   responsive.css – Responsive Overrides
+   ================================ */
+
+/* === Mobile First Adjustments (up to 576px) === */
+@media (max-width: 575.98px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .tab-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .navbar-custom .nav-link {
+    margin: 0 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  .module-card,
+  .profile-card,
+  .preview-box {
+    padding: 1.25rem;
+  }
+
+  .text-4xl {
+    font-size: 1.8rem !important;
+  }
+
+  .text-2xl {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* === Tablet (sm: ≥576px and md: ≥768px) === */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .tab-btn {
+    font-size: 1rem;
+  }
+
+  .text-4xl {
+    font-size: 2rem !important;
+  }
+}
+
+/* === Desktop (lg: ≥992px) === */
+@media (min-width: 992px) {
+  .hero {
+    text-align: left;
+    padding: 5rem 4rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .tab-btn {
+    font-size: 1.125rem;
+  }
+
+  .module-card,
+  .profile-card,
+  .preview-box {
+    padding: 2rem;
+  }
+}

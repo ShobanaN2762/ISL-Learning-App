@@ -1,0 +1,155 @@
+/* ================================
+   main.css – Custom Theme & Utilities
+   Tailwind-like design using Bootstrap
+   ================================ */
+
+/* === Font Import (Tailwind used Inter) === */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* === Root Color Variables (Tailwind Palette) === */
+:root {
+  --color-navy: #0a192f;
+  --color-slate: #94a3b8;
+  --color-coral: #fb7c47;
+  --color-white: #ffffff;
+  --color-bg: #f8fafc;
+  --color-muted: #64748b;
+
+  --bs-body-font-family: "Inter", sans-serif;
+  --bs-border-radius: 0.5rem;
+}
+
+/* === Body/Base Reset === */
+body {
+  background-color: var(--color-bg);
+  color: #0f172a;
+  font-family: var(--bs-body-font-family);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Headings === */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.text-muted {
+  color: var(--color-muted) !important;
+}
+
+/* === Link & Button Theme Overrides === */
+a {
+  text-decoration: none;
+  color: var(--color-coral);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Custom Utility Classes === */
+.text-coral {
+  color: var(--color-coral) !important;
+}
+.bg-navy {
+  background-color: var(--color-navy) !important;
+}
+.bg-slate {
+  background-color: var(--color-slate) !important;
+}
+.bg-light-surface {
+  background-color: #f1f5f9 !important;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.rounded-xl {
+  border-radius: 1rem !important;
+}
+
+.px-6 {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+.py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+}
+.text-xl {
+  font-size: 1.25rem !important;
+}
+.text-2xl {
+  font-size: 1.5rem !important;
+}
+.text-4xl {
+  font-size: 2.25rem !important;
+}
+.text-5xl {
+  font-size: 3rem !important;
+  font-weight: 800;
+}
+
+.btn-coral {
+  background-color: var(--color-coral);
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+}
+.btn-coral:hover {
+  background-color: #e56a38;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+/* Add this class definition to your main.css */
+.opacity-0 {
+  opacity: 0;
+}
+
+/* The app.js file also sets a 500ms timeout for the transition. 
+  For the smoothest effect, ensure the loading screen has a transition property.
+  You can add this rule as well.
+*/
+#loading-screen {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Custom styles for the feedback modal */
+#feedback-modal .modal-content {
+  border-radius: 1rem;
+  border: none;
+}
+
+#feedback-modal #feedback-icon svg {
+  width: 60px;
+  height: 60px;
+}
+
+#feedback-confidence-bar.bg-success {
+  background-color: #198754 !important; /* Bootstrap Success Green */
+}
+
+#feedback-confidence-bar.bg-danger {
+  background-color: #dc3545 !important; /* Bootstrap Danger Red */
+}
