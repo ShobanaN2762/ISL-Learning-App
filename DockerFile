@@ -1,7 +1,6 @@
 # Dockerfile
 
 # STAGE 1: Build the application using Maven
-# UPDATED: Using Maven 3.9.11 to match your maven-wrapper.properties
 FROM maven:3.9.11-openjdk-17 AS builder
 
 # Set the working directory inside the container
