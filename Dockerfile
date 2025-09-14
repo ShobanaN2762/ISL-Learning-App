@@ -1,7 +1,8 @@
 # Dockerfile
 
 # STAGE 1: Build the application using Maven
-FROM maven:3.9.11-openjdk-17 AS builder
+# UPDATED LINE: Switching to a more reliable Maven/JDK combo
+FROM maven:3.9-eclipse-temurin-17 AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -17,7 +18,6 @@ RUN mvn clean package -DskipTests
 
 
 # STAGE 2: Create the final, lightweight runtime image
-# UPDATED LINE: We are switching to the more reliable eclipse-temurin image
 FROM eclipse-temurin:17-jre
 
 # Set the working directory
