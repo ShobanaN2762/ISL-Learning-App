@@ -6,20 +6,19 @@ FROM maven:3.9.11-openjdk-17 AS builder
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Maven project file first to leverage Docker's layer caching
+# Copy the Maven project file first
 COPY pom.xml .
 
 # Copy the rest of your source code
 COPY src ./src
 
 # Run the Maven package command to build the executable JAR
-# -DskipTests skips running tests during the build
 RUN mvn clean package -DskipTests
 
 
 # STAGE 2: Create the final, lightweight runtime image
-# We use a slim Java Runtime Environment (JRE) which is smaller than a full JDK
-FROM openjdk:17-jre-slim
+# UPDATED LINE: We are switching to the more reliable eclipse-temurin image
+FROM eclipse-temurin:17-jre
 
 # Set the working directory
 WORKDIR /app
@@ -28,7 +27,6 @@ WORKDIR /app
 EXPOSE 8080
 
 # Copy the final JAR file from the 'builder' stage
-# The JAR will be in the 'target' directory. We rename it to app.jar for simplicity.
 COPY --from=builder /app/target/*.jar app.jar
 
 # Define the command to run the application
