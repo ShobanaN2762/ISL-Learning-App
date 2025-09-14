@@ -8,7 +8,7 @@ class ProfileManager {
     this.isInitialized = false;
     this.currentUser = null;
     this.isDirty = false;
-    this.baseURL = "http://localhost:8080/api/users";
+    this.baseURL = "/api/users";
   }
 
   init() {

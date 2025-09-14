@@ -2,7 +2,7 @@ class DashboardManager {
   constructor() {
     this.isInitialized = false;
     // --- NEW: Base URL for the backend API ---
-    this.baseURL = "http://localhost:8080/api";
+    this.baseURL = "/api";
   }
 
   // Initializes the module (no heavy logic here)
@@ -228,9 +228,7 @@ class DashboardManager {
     if (!user) return '<p class="text-muted">Log in to see achievements.</p>';
 
     try {
-      const response = await fetch(
-        `http://localhost:8080/api/achievements/${user.id}`
-      );
+      const response = await fetch(`/api/achievements/${user.id}`);
       if (!response.ok) throw new Error("Could not load achievements.");
 
       const achievements = await response.json();

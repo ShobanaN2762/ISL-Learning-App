@@ -162,7 +162,7 @@ class LearningManager {
 
     try {
       // === 1) COMPLETE THE LESSON (No changes here) ===
-      const completeLessonUrl = `http://localhost:8080/api/progress/complete-lesson/${user.id}`;
+      const completeLessonUrl = `/api/progress/complete-lesson/${user.id}`;
       const lessonResponse = await fetch(completeLessonUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -200,7 +200,7 @@ class LearningManager {
       if (todayDateString !== lastUpdateDate) {
         console.log("First lesson of the day. Updating study streak...");
 
-        const updateStreakUrl = `http://localhost:8080/api/progress/update-streak/${user.id}`;
+        const updateStreakUrl = `/api/progress/update-streak/${user.id}`;
         const streakResponse = await fetch(updateStreakUrl, { method: "POST" });
 
         if (!streakResponse.ok) {
@@ -225,7 +225,7 @@ class LearningManager {
       // === END OF MODIFIED BLOCK ===
 
       // === 3) CHECK FOR NEW ACHIEVEMENTS (No changes here) ===
-      const checkAchievementsUrl = `http://localhost:8080/api/achievements/check/${user.id}`;
+      const checkAchievementsUrl = `/api/achievements/check/${user.id}`;
       const achievementResponse = await fetch(checkAchievementsUrl, {
         method: "POST",
       });
@@ -278,7 +278,7 @@ class LearningManager {
     );
 
     try {
-      const url = `http://localhost:8080/api/progress/add-study-time/${user.id}`;
+      const url = `/api/progress/add-study-time/${user.id}`;
 
       const response = await fetch(url, {
         method: "POST",

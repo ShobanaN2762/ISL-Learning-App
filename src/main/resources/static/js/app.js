@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         // Call the endpoint and send lessonId
         const response = await fetch(
-          `http://localhost:8080/api/progress/complete-lesson/${user.id}`,
+          `/api/progress/complete-lesson/${user.id}`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -465,7 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const response = await fetch(
-          `http://localhost:8080/api/progress/add-study-time/${user.id}`,
+          `/api/progress/add-study-time/${user.id}`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -491,12 +491,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!user) return;
 
       try {
-        const response = await fetch(
-          `http://localhost:8080/api/progress/update-streak/${user.id}`,
-          {
-            method: "POST",
-          }
-        );
+        const response = await fetch(`/api/progress/update-streak/${user.id}`, {
+          method: "POST",
+        });
 
         if (!response.ok) {
           throw new Error(
@@ -515,12 +512,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const user = AuthManager.getCurrentUser();
       if (!user) return;
       try {
-        const response = await fetch(
-          `http://localhost:8080/api/achievements/check/${user.id}`,
-          {
-            method: "POST",
-          }
-        );
+        const response = await fetch(`/api/achievements/check/${user.id}`, {
+          method: "POST",
+        });
         if (!response.ok)
           throw new Error("Server error while checking achievements.");
         console.log("Achievement check triggered successfully.");
