@@ -83,7 +83,7 @@ public class UserProgressService {
                     progress.setStudyStreak(progress.getStudyStreak() + 1);
                 } else {
                     // It was more than a day ago, so reset the streak to 0
-                    progress.setStudyStreak(0);
+                    progress.setStudyStreak(1);
                 }
             }
             // If it IS the same day, we do nothing to the streak count.
@@ -98,15 +98,12 @@ public class UserProgressService {
     UserProgress progress = userProgressRepository.findByUserId(userId)
         .orElseThrow(() -> new IllegalStateException("User progress not found"));
 
-    // Only increment if lesson not already completed
     if (!progress.getCompletedLessons().contains(lessonId)) {
         progress.getCompletedLessons().add(lessonId);
         progress.setLessonsCompleted(progress.getLessonsCompleted() + 1);
     }
     this.updateStudyStreak(userId);
-        progress.setLastStudiedDate(new Date());
-        return userProgressRepository.save(progress);
+    return userProgressRepository.save(progress);
+
     }
-
-
 }
